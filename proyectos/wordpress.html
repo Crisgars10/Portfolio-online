@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WordPress — Cristóbal Zambrano</title>
+<link rel="stylesheet" href="proyecto.css">
+<style>
+  /* CARRUSEL */
+  .carousel-section { max-width:900px; margin:0 auto; padding:0 2rem; position:relative; z-index:1; }
+  .carousel-frame {
+    border:4px solid var(--yellow);
+    box-shadow:10px 10px 0 rgba(255,230,0,0.2), -4px -4px 0 var(--magenta);
+    background:#000;
+  }
+  .carousel-bar {
+    background:var(--yellow); color:var(--black);
+    font-family:"Press Start 2P",monospace; font-size:0.5rem;
+    padding:0.6rem 1rem;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .carousel-bar span:last-child { font-size:0.4rem; opacity:0.6; }
+  .carousel-inner { position:relative; overflow:hidden; height:420px; }
+  .carousel-slide {
+    position:absolute; inset:0;
+    opacity:0; transition:opacity 0.6s ease;
+    display:flex; align-items:center; justify-content:center;
+    background:#000;
+  }
+  .carousel-slide.active { opacity:1; }
+  .carousel-slide img {
+    width:100%; height:100%; object-fit:contain;
+    display:block;
+  }
+  .carousel-controls {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0.8rem 1rem;
+    background:rgba(0,0,0,0.8);
+    border-top:3px solid var(--yellow);
+  }
+  .carousel-btn {
+    font-family:"Press Start 2P",monospace; font-size:0.55rem;
+    color:var(--black); background:var(--yellow);
+    border:2px solid var(--yellow); padding:0.5rem 1rem;
+    cursor:pointer; transition:all 0.15s;
+  }
+  .carousel-btn:hover { box-shadow:3px 3px 0 var(--black); transform:translate(-2px,-2px); }
+  .carousel-dots { display:flex; gap:0.6rem; }
+  .carousel-dot {
+    width:12px; height:12px;
+    border:2px solid var(--yellow);
+    background:transparent; cursor:pointer;
+    transition:background 0.2s;
+  }
+  .carousel-dot.active { background:var(--yellow); }
+  .carousel-counter {
+    font-family:"Press Start 2P",monospace; font-size:0.45rem;
+    color:var(--yellow);
+  }
+
+  /* BOTÓN PDF */
+  .pdf-wrap { max-width:900px; margin:1.5rem auto 0; padding:0 2rem; position:relative; z-index:1; display:flex; gap:1rem; flex-wrap:wrap; }
+  .btn-pdf {
+    font-family:"Press Start 2P",monospace; font-size:0.5rem;
+    color:var(--black); background:var(--cyan);
+    border:3px solid var(--cyan); padding:0.8rem 1.5rem;
+    box-shadow:4px 4px 0 var(--black);
+    text-decoration:none; transition:all 0.15s;
+  }
+  .btn-pdf:hover { box-shadow:6px 6px 0 var(--black); transform:translate(-2px,-2px); }
+  /* btn-full como botón nativo */
+  button.btn-full {
+    font-family:"Press Start 2P",monospace; font-size:0.5rem;
+    color:var(--black); background:var(--magenta);
+    border:3px solid var(--magenta); padding:0.8rem 1.5rem;
+    box-shadow:4px 4px 0 var(--black);
+    cursor:pointer; transition:all 0.15s; text-decoration:none;
+  }
+  button.btn-full:hover { box-shadow:6px 6px 0 var(--black); transform:translate(-2px,-2px); }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">CRIS.ZAMBRANO_</span>
+  <a href="../index.html" class="nav-back">◀ VOLVER</a>
+</nav>
+
+<div class="terminal-header">
+  <div class="th-window">
+    <div class="th-bar">
+      <span class="th-dot r"></span><span class="th-dot y"></span><span class="th-dot g"></span>
+      &nbsp; WORDPRESS.EXE
+    </div>
+    <div class="th-body">
+      <div class="th-line"><span class="p">C:\&gt; </span><span class="v">cat descripcion.txt</span></div>
+      <div class="th-line"><span class="c">// Proyecto: Página Web con WordPress</span></div>
+      <div class="th-line"><span class="p">INFO: </span><span class="v">Instalación y configuración de WordPress en XAMPP local</span></div>
+      <div class="th-line"><span class="p">INFO: </span><span class="v">Tema Bedrock — Blog de noticias "CristobalNews"</span></div>
+      <div class="th-line"><span class="p">INFO: </span><span class="v">Entradas, categorías, usuarios y permisos configurados</span></div>
+      <div class="th-line"><span class="p">INFO: </span><span class="v">Instalación remota de Joomla 4.4 mediante FileZilla</span></div>
+      <div class="th-line"><span class="p">STATUS: </span><span style="color:var(--green);">PROYECTO COMPLETADO ✓</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="tags-row">
+  <span class="tag tag-cyan">🌐 WORDPRESS</span>
+  <span class="tag tag-magenta">🔧 JOOMLA</span>
+  <span class="tag tag-yellow">🗄️ MYSQL</span>
+  <span class="tag tag-cyan">📦 XAMPP</span>
+  <span class="tag tag-cyan">📁 FILEZILLA</span>
+  <span class="tag tag-magenta">🎨 BEDROCK THEME</span>
+</div>
+
+<div class="retro-divider"><span>◈ CAPTURAS DEL PROYECTO ◈</span></div>
+
+<div class="carousel-section">
+  <div class="carousel-frame">
+    <div class="carousel-bar">
+      <span>▶ WORDPRESS — CRISTOBALNEWS</span>
+      <span>5 CAPTURAS · 2025-2026</span>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-slide active">
+        <img src="../img/imagen1.png" alt="Captura 1 — WordPress CristobalNews">
+      </div>
+      <div class="carousel-slide">
+        <img src="../img/imagen2.png" alt="Captura 2 — WordPress CristobalNews">
+      </div>
+      <div class="carousel-slide">
+        <img src="../img/imagen3.png" alt="Captura 3 — WordPress CristobalNews">
+      </div>
+      <div class="carousel-slide">
+        <img src="../img/imagen4.png" alt="Captura 4 — WordPress CristobalNews">
+      </div>
+      <div class="carousel-slide">
+        <img src="../img/imagen5.png" alt="Captura 5 — WordPress CristobalNews">
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-btn" onclick="prevSlide()">◀ PREV</button>
+      <div class="carousel-dots" id="dots">
+        <div class="carousel-dot active" onclick="goToSlide(0)"></div>
+        <div class="carousel-dot" onclick="goToSlide(1)"></div>
+        <div class="carousel-dot" onclick="goToSlide(2)"></div>
+        <div class="carousel-dot" onclick="goToSlide(3)"></div>
+        <div class="carousel-dot" onclick="goToSlide(4)"></div>
+      </div>
+      <span class="carousel-counter" id="counter">1 / 5</span>
+      <button class="carousel-btn" onclick="nextSlide()">NEXT ▶</button>
+    </div>
+  </div>
+</div>
+
+<div class="retro-divider2"><span>◈ DOCUMENTACIÓN ◈</span></div>
+
+<div class="pdf-wrap">
+  <a href="../Manualwordpressyjoomla.pdf" class="btn-pdf" target="_blank" rel="noopener">📄 VER MANUAL PDF</a>
+</div>
+
+<footer>
+  <p>© 2026 CRISTÓBAL ZAMBRANO GARCÍA — TÉCNICO SMYR</p>
+  <p><a href="../index.html">[ VOLVER AL PORTFOLIO ]</a></p>
+</footer>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const counter = document.getElementById('counter');
+
+  function goToSlide(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    counter.textContent = (current + 1) + ' / ' + slides.length;
+  }
+  function nextSlide() { goToSlide(current + 1); }
+  function prevSlide() { goToSlide(current - 1); }
+
+  // Auto-avance cada 4 segundos
+  setInterval(nextSlide, 4000);</script>
+
+</body>
+</html>
